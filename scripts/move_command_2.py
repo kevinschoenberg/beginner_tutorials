@@ -35,57 +35,35 @@ def callback(msg):
 
     if middle_dist < 0.5:
         vel.linear.x = map_range(middle_dist, 0.2, 0.5, 0, max_lin_vel)
-        if middle_dist < 0.3:
+        if middle_dist < 0.2:
             if right_dist < 1:
                 if left_dist < 1:
                     #turn
-                    
-                    vel.angular.z = 3
-                    print_values()
-                    return
+                    vel.angular.z = map_range(middle_dist, 0.2, 0.5, 3, 0)
                 else:
                     #turn left
                     vel.angular.z = 1.5
-                    print_values()
-                    return
-            else:
-                #turn right
-                vel.angular.z = -1.5
-                print_values()
-                return
-            
-           
-    #if f_right_dist < 0.2:
-        #turn left
-        #vel.angular.z = map_range(f_right_dist, 0.1, 0.2, 3.14/2, 0.4)
-    
-    #if f_left_dist < 0.2:
-        #turn right
-        #vel.angular.z = -1 * map_range(f_left_dist, 0.1, 0.2, 3.14/2, 0.4)
-        #if f_left_dist > f_right_dist:
-            #vel.angular.z = map_range(f_right_dist, 0.1, 0.5, 3.14/2, 0.4)
-    
-    #else
-        #full speed
-        
-
-    if middle_dist < 0.15 or f_left_dist < 0.15 or f_right_dist < 0.15:
-        if is_collided == False:
-            collisions += 1
-        is_collided = True
-
-    
-    
-    if is_collided:
-        vel.linear.x = -0.1
-        if msg.ranges[180-30] > 0.5:
+        else:
             #turn right
-            vel.angular.z = 0.5
-        elif msg.ranges[180+30] > 0.5:
-            #turn left
-            vel.angular.z = -0.5
-        if middle_dist >= 0.2 and f_left_dist >= 0.2 and f_right_dist >= 0.2:
-            is_collided = False
+            vel.angular.z = -1.5
+    elif right_dist > 1:
+        #turn right
+         vel.angular.z = -1.5
+    elif left_dist > 1:
+        #turn left
+         vel.angular.z = 1.5
+
+    if f_right_dist < 0.2:
+        #turn left
+        vel.angular.z += map_range(f_right_dist, 0.1, 0.2, 0.5, 0.2)
+        print_values()
+        return
+    
+    if f_left_dist < 0.2:
+        #turn right
+        vel.angular.z += -1 * map_range(f_left_dist, 0.1, 0.2, 0.5, 0.2)
+        print_values()
+        return
 
     print_values()
     
