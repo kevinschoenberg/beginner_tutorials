@@ -1,0 +1,9 @@
+<launch>
+    <node   pkg="beginner_tutorials" 
+            type="move_command_3.py" 
+            name="move_command"
+            output="screen">
+    
+    </node>
+</launch>
+

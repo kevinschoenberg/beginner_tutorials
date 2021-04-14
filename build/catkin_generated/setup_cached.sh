@@ -7,7 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/turtlebot/catkin_ws/src/beginner_tutorials/build/devel:$CMAKE_PREFIX_PATH"
-export PWD='/home/turtlebot/catkin_ws/src/beginner_tutorials'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/turtlebot/catkin_ws/src/beginner_tutorials/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/turtlebot/catkin_ws/src/beginner_tutorials:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/kevin/catkin_ws/src/beginner_tutorials/build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/kevin/catkin_ws/src/beginner_tutorials/build/devel/lib:$LD_LIBRARY_PATH"
+export PATH='/opt/ros/noetic/bin:/home/kevin/.local/bin:/home/kevin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+export PKG_CONFIG_PATH="/home/kevin/catkin_ws/src/beginner_tutorials/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/kevin/catkin_ws/src/beginner_tutorials/build/devel/lib/python3/dist-packages:$PYTHONPATH"
+export ROS_PACKAGE_PATH="/home/turtlebot/catkin_ws/src/beginner_tutorials:/home/kevin/catkin_ws/src/beginner_tutorials:$ROS_PACKAGE_PATH"

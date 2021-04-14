@@ -67,8 +67,8 @@ set(beginner_tutorials_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(beginner_tutorials_SOURCE_PREFIX /home/turtlebot/catkin_ws/src/beginner_tutorials)
-  set(beginner_tutorials_DEVEL_PREFIX /home/turtlebot/catkin_ws/src/beginner_tutorials/build/devel)
+  set(beginner_tutorials_SOURCE_PREFIX /home/kevin/catkin_ws/src/beginner_tutorials)
+  set(beginner_tutorials_DEVEL_PREFIX /home/kevin/catkin_ws/src/beginner_tutorials/build/devel)
   set(beginner_tutorials_INSTALL_PREFIX "")
   set(beginner_tutorials_PREFIX ${beginner_tutorials_DEVEL_PREFIX})
 else()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /usr/local/lib;/home/turtlebot/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /usr/local/lib;/home/kevin/catkin_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

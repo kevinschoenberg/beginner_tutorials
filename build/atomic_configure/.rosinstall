@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/turtlebot/catkin_ws/src/beginner_tutorials/build/devel/setup.sh
+    local-name: /home/kevin/catkin_ws/src/beginner_tutorials/build/devel/setup.sh
